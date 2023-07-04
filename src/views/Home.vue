@@ -1,7 +1,8 @@
 <!-- @format -->
 
 <template>
-	<div class="flex flex-wrap my-8">
+	<div
+		class="flex flex-wrap my-8 gap-1 mx-16">
 		<CardComponent /> <CardComponent />
 	</div>
 </template>
