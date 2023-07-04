@@ -7,21 +7,39 @@
 			class="container flex items-center flex-col bg-[#a1a1aa] w-64 h-64 rounded-lg p-4">
 			<div
 				class="picture rounded-full bg-[#71717a] w-24 h-24 m-2">
+				<img
+					:src="props.profilePicture" />
 			</div>
 			<div class="p-2">
 				<strong>
-					First <span> Last</span>
+					{{ props.firstName }}
+					<span>
+						{{ props.lastName }}</span
+					>
 				</strong>
 			</div>
 			<button
 				class="rounded-full bg-[#71717a] opacity-25 hover:bg-sky-700 w-24">
-				Contact</button
+				{{ props.contactInfo }}</button
 			>
 		</div>
 	</div>
 </template>
 
-<script></script>
+<script setup>
+const props = defineProps({
+	firstName: {
+		type: String,
+		required: true,
+	},
+	lastName: {
+		type: String,
+		required: true,
+	},
+	profilePicture: { type: String },
+	contactInfo: { type: String },
+});
+</script>
 <style>
 h1 {
 	margin: 40px 0 0;
