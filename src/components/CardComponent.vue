@@ -1,5 +1,4 @@
 <!-- @format -->
-<!-- @format -->
 
 <template>
 	<div class="card p-2">
@@ -19,14 +18,21 @@
 				</strong>
 			</div>
 			<button
+				v-on:click="GetEmail"
 				class="rounded-full bg-[#71717a] opacity-25 hover:bg-sky-700 w-24">
-				{{ props.contactInfo }}</button
+				Contact</button
 			>
+
+			<div v-show="showEmail">
+				{{ props.contactInfo }}
+			</div>
+			<div v-show="showEmail"> </div>
 		</div>
 	</div>
 </template>
 
 <script setup>
+import { ref } from "vue";
 const props = defineProps({
 	firstName: {
 		type: String,
@@ -37,8 +43,14 @@ const props = defineProps({
 		required: true,
 	},
 	profilePicture: { type: String },
-	contactInfo: { type: String },
+	contactInfo: {
+		type: String,
+	},
 });
+let showEmail = ref(false);
+const GetEmail = () => {
+	showEmail.value = true;
+};
 </script>
 <style>
 h1 {
