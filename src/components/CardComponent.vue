@@ -18,15 +18,13 @@
 				</strong>
 			</div>
 			<button
-				v-on:click="GetEmail"
+				v-on:click="ToggleEmail"
 				class="rounded-full bg-[#71717a] opacity-25 hover:bg-sky-700 w-24">
 				Contact</button
 			>
-
 			<div v-show="showEmail">
 				{{ props.contactInfo }}
 			</div>
-			<div v-show="showEmail"> </div>
 		</div>
 	</div>
 </template>
@@ -48,8 +46,8 @@ const props = defineProps({
 	},
 });
 let showEmail = ref(false);
-const GetEmail = () => {
-	showEmail.value = true;
+const ToggleEmail = () => {
+	showEmail.value = !showEmail.value;
 };
 </script>
 <style>
