@@ -2,7 +2,7 @@
 
 <template>
 	<div
-		class="flex flex-wrap my-8 gap-1 mx-16">
+		class="flex justify-center flex-wrap my-32 gap-1 mx-16">
 		<CardComponent
 			v-for="employee of employeeInformation"
 			:firstName="employee.first_name"

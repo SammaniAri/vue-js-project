@@ -3,7 +3,7 @@
 <template>
 	<div class="card p-2">
 		<div
-			class="container flex items-center flex-col bg-[#a1a1aa] w-48 h-48 rounded-lg p-4">
+			class="container flex justify-center items-center flex-col bg-[#f3f4f6] w-48 h-48 rounded-lg p-4">
 			<div class="picture">
 				<img
 					class="image"
