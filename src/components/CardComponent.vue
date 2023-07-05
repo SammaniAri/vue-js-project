@@ -3,10 +3,10 @@
 <template>
 	<div class="card p-2">
 		<div
-			class="container flex items-center flex-col bg-[#a1a1aa] w-64 h-64 rounded-lg p-4">
-			<div
-				class="picture rounded-full bg-[#71717a] w-24 h-24 m-2">
+			class="container flex items-center flex-col bg-[#a1a1aa] w-48 h-48 rounded-lg p-4">
+			<div class="picture">
 				<img
+					class="image"
 					:src="props.profilePicture" />
 			</div>
 			<div class="p-2">
@@ -51,7 +51,14 @@ const ToggleEmail = () => {
 };
 </script>
 <style>
-h1 {
-	margin: 40px 0 0;
+.picture {
+	display: flex;
+	justify-content: center;
+	border-radius: 50%;
+	width: 50%;
+	height: 50%;
+}
+.image {
+	border-radius: 50%;
 }
 </style>
