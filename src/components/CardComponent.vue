@@ -55,7 +55,6 @@ const ToggleEmail = () => {
 .picture {
 	display: flex;
 	justify-content: center;
-	border-radius: 50%;
 	width: 50%;
 	height: 50%;
 }
