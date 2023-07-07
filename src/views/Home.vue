@@ -12,6 +12,7 @@
 	</div>
 	<div class="flex justify-center">
 		<PaginationComponent
+			@page-click-event="loadData"
 			:numberOfPages="pages" />
 	</div>
 </template>
@@ -19,21 +20,28 @@
 import { ref, onMounted } from "vue";
 import CardComponent from "../components/CardComponent.vue";
 import PaginationComponent from "../components/PaginationComponent.vue";
-import axiosClient from "../views/axiosClient.js";
+import axios from "axios";
 
 let employeeInformation = ref([]);
 let pages = ref([]);
 onMounted(async () => {
-	const response =
-		await axiosClient.get("/");
-	console.log(response.data.data);
-	console.log(
-		response.data.total_pages
-	);
-
-	employeeInformation.value =
-		response.data.data;
-	pages = response.data.total_pages;
+	loadData(1);
 });
+
+function loadData(pageNumber) {
+	axios
+		.get(
+			"https://reqres.in/api/users?page=" +
+				pageNumber
+		)
+		.then((response) => {
+			console.log(
+				response.data.total_pages
+			);
+
+			employeeInformation.value =
+				response.data.data;
+			pages = response.data.total_pages;
+		});
+}
 </script>
-<style scoped></style>
