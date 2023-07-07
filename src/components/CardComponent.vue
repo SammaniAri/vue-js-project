@@ -20,8 +20,11 @@
 			<button
 				v-on:click="ToggleEmail"
 				class="rounded-full bg-[#71717a] opacity-25 hover:bg-sky-700 w-24">
-				Contact</button
-			>
+				<span v-if="showEmail">
+					Hide
+				</span>
+				<span v-else> Contact </span>
+			</button>
 			<div v-show="showEmail">
 				{{ props.contactInfo }}
 			</div>
@@ -31,6 +34,7 @@
 
 <script setup>
 import { ref } from "vue";
+
 const props = defineProps({
 	firstName: {
 		type: String,
@@ -54,7 +58,6 @@ const ToggleEmail = () => {
 .picture {
 	display: flex;
 	justify-content: center;
-	border-radius: 50%;
 	width: 50%;
 	height: 50%;
 }
