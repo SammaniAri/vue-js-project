@@ -18,7 +18,7 @@
 				</strong>
 			</div>
 			<button
-				v-on:click="ToggleEmail"
+				v-on:click="toggleEmail"
 				class="rounded-full bg-[#71717a] opacity-25 hover:bg-sky-700 w-24">
 				<span v-if="showEmail">
 					Hide
@@ -50,7 +50,7 @@ const props = defineProps({
 	},
 });
 let showEmail = ref(false);
-const ToggleEmail = () => {
+const toggleEmail = () => {
 	showEmail.value = !showEmail.value;
 };
 </script>
