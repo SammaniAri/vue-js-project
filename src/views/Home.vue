@@ -35,10 +35,6 @@ function loadData(pageNumber) {
 				pageNumber
 		)
 		.then((response) => {
-			console.log(
-				response.data.total_pages
-			);
-
 			employeeInformation.value =
 				response.data.data;
 			pages = response.data.total_pages;
